@@ -18,6 +18,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('trades', 'TradesController@index')->name('shaowalltrades');
+Route::get('todaytrades', 'TradesController@indextoday')->name('shaowalltodaytrades');
+Route::get('monthtrades', 'TradesController@indexmonth')->name('shaowallmonthtrades');
+Route::get('yeartrades', 'TradesController@indexyear')->name('shaowalluyeartrades');
 Route::get('todaytradescompras', 'TradesController@index_hoy_compras')->name('index_hoy_compras');
 Route::get('yesterdaytradescompras', 'TradesController@index_ayer_compras')->name('index_ayer_compras');
 Route::get('monthtradescompras', 'TradesController@index_mes_compras')->name('index_mes_compras');

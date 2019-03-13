@@ -19,6 +19,29 @@ class TradesController extends Controller
       $Trades = Trade::all()->toarray();
       return response()->json($Trades);
     }
+
+    public function indextoday()
+    {
+      $today = date('Y-m-d');
+      $Trades =\DB::table('trades')->WhereDate('created_at',$today)->OrderBy('created_at','DESC')->get();
+      return response()->json($Trades);
+    }
+
+    public function indexmonth()
+    {
+      $m = date('m');
+      $Trades =\DB::table('trades')->WhereMonth('created_at',$m)->OrderBy('created_at','DESC')->get();
+      return response()->json($Trades);
+    }
+
+    public function indexyear()
+    {
+      $y = date('Y');
+      $Trades =\DB::table('trades')->WhereYear('created_at',$y)->OrderBy('created_at','DESC')->get();
+      return response()->json($Trades);
+    }
+
+
     public function index_hoy_compras()
     {
       $today = date('Y-m-d');
