@@ -37,10 +37,10 @@
                         <div class="form-group row">
                           <div class="col-md-12 col-form-h1 text-md-left"><h2>Transacciónes</h2></div>
                         </div>
-                        <div class="hoy">
+                        <div class="hoy form-group row col-md-12 ">
                         </div>
                         <div class="form-group row">
-                          <label for="" class="col-md-12 col-form-label text-md-center gray">Operaciones en general</label>
+                          <label for="" class="col-md-12 col-form-label text-md-center">Operaciones en general</label>
                         </div>
                         <div class="form-group row">
                           <label for="" class="col-md-4 col-form-label text-md-center">Precio</label>

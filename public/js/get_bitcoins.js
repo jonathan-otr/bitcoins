@@ -95,16 +95,6 @@ if(document.URL.indexOf("/consultar") >= 0){
             else {
               $(".transacciones").append($('<p  class="col-md-4 col-form-label text-md-center">').text("Venta").attr("id",i+"c"));
             }
-            //guarda las transacciones nuevas
-            $.ajax({
-      url: "/savetrade",
-      data: {"tid":Object.tid,"book":Object.book,"amount":Object.amount,"maker_side":Object.maker_side,"price":Object.price},
-      success: function(response) {
-      },
-      error: function(xhr) {
-        console.log('error al guardar')
-      }
-  });
           });
       }
     });
@@ -126,16 +116,6 @@ if(document.URL.indexOf("/consultar") >= 0){
             else {
               $("#"+i+"c").text("Venta").attr("id",i+"c");
             }
-            //guarda las transacciones nuevas sin registrar
-            $.ajax({
-      url: "/savetrade",
-      data: {"tid":Object.tid,"book":Object.book,"amount":Object.amount,"maker_side":Object.maker_side,"price":Object.price},
-      success: function(response) {
-      },
-      error: function(xhr) {
-        console.log('error al guardar')
-      }
-  });
           });
 
       }
