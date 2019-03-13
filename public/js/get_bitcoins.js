@@ -49,7 +49,7 @@ if(document.URL.indexOf("/consultar") >= 0){
   }
   setInterval(function() {
             getbitcoinsinfo();
-        }, 1000);
+        }, 10000);
 }
 
 

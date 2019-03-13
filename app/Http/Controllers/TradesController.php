@@ -26,10 +26,52 @@ class TradesController extends Controller
       return response()->json($Trades);
     }
 
+    public function index_ayer_compras()
+    {
+      $today = date('Y-m-d');
+      $yesterday= date("d-m-Y",strtotime($today."- 1 days"));
+      $Trades =\DB::table('trades')->WhereDate('created_at',$yesterday)->where('maker_side','buy')->OrderBy('created_at','ASC')->take('10')->get();
+      return response()->json($Trades);
+    }
+    public function index_mes_compras()
+    {
+      $month = date('m');
+      $Trades =\DB::table('trades')->WhereMonth('created_at',$month)->where('maker_side','buy')->OrderBy('created_at','ASC')->take('10')->get();
+      return response()->json($Trades);
+    }
+    public function index_año_compras()
+    {
+      $year = date('Y');
+      $Trades =\DB::table('trades')->WhereYear('created_at',$year)->where('maker_side','buy')->OrderBy('created_at','ASC')->take('10')->get();
+      return response()->json($Trades);
+    }
+
     public function index_hoy_ventas()
     {
       $today = date('Y-m-d');
       $Trades =\DB::table('trades')->WhereDate('created_at',$today)->where('maker_side','sell')->OrderBy('created_at','DESC')->take('10')->get();
+      return response()->json($Trades);
+    }
+
+    public function index_ayer_ventas()
+    {
+      $today = date('Y-m-d');
+      $yesterday= date("d-m-Y",strtotime($today."- 1 days"));
+      $Trades =\DB::table('trades')->WhereDate('created_at',$yesterday)->where('maker_side','sell')->OrderBy('created_at','ASC')->take('10')->get();
+      return response()->json($Trades);
+    }
+
+    public function index_mes_ventas()
+    {
+      $m = date('m');
+      $Trades =\DB::table('trades')->WhereMonth('created_at',$m)->where('maker_side','sell')->OrderBy('created_at','ASC')->take('10')->get();
+      return response()->json($Trades);
+    }
+
+    public function index_año_ventas()
+    {
+      $y = date('Y');
+      $Trades =\DB::table('trades')->WhereYear('created_at',$y)->where('maker_side','sell')->OrderBy('created_at','ASC')->take('10')->get();
       return response()->json($Trades);
     }
 

@@ -27,6 +27,6 @@ $(document).ready(function(){
 
   setInterval(function() {
     gettrades();
-  }, 5000);
+  }, 10000);
 
 });
