@@ -9,8 +9,8 @@ if(document.URL.indexOf("/datosbitcoin/btc_mxn") >= 0){
         $(".hoy").append($('<div  class="form-group form col-md-6">').attr("id","ventas"));
         $("#compras").append($('<div class="form-grup row">').attr("id","compras_hoy"));
         $("#ventas").append($('<div class="form-grup row">').attr("id","ventas_hoy"));
-        $("#ventas_hoy").append($('<label class="col-md-6 col-form-label text-md-center white" style="background-color:deepskyblue;">').text("Ventas"));
-        $("#compras_hoy").append($('<label class="col-md-6 col-form-label text-md-center white" style="background-color:deepskyblue;">').text("Compras"));
+        $("#ventas_hoy").append($('<label class="col-md-6 col-form-label text-md-center white" style="background-color:#2a9f2a80;">').text("Ventas"));
+        $("#compras_hoy").append($('<label class="col-md-6 col-form-label text-md-center white" style="background-color:#db151580;">').text("Compras"));
         $("#compras_hoy").append($('<select class="col-md-6 form-control">').attr("id","date_compras"));
         $('#date_compras').append($('<option>').attr('value','1').text('Hoy').attr('selected','selected'));
         $('#date_compras').append($('<option>').attr('value','2').text('Ayer'));
