@@ -90,10 +90,10 @@ if(document.URL.indexOf("/consultar") >= 0){
             $(".transacciones").append($('<p  class="col-md-4 col-form-label text-md-center">').text("$"+Object.price+"MNX").attr("id",i+"a"));
             $(".transacciones").append($('<p  class="col-md-4 col-form-label text-md-center">').text(Object.amount).attr("id",i+"b"));
             if (Object.maker_side=="buy") {
-              $(".transacciones").append($('<p  class="col-md-4 col-form-label text-md-center">').text("Compra").attr("id",i+"c"));
+              $(".transacciones").append($('<p  class="col-md-4 col-form-label text-md-center white" style="background-color:#2a9f2a80;">').text("Compra").attr("id",i+"c"));
             }
             else {
-              $(".transacciones").append($('<p  class="col-md-4 col-form-label text-md-center">').text("Venta").attr("id",i+"c"));
+              $(".transacciones").append($('<p  class="col-md-4 col-form-label text-md-center white" style="background-color:#db151580;">').text("Venta").attr("id",i+"c"));
             }
           });
       }
@@ -111,10 +111,10 @@ if(document.URL.indexOf("/consultar") >= 0){
             $("#"+i+"a").text("$"+Object.price+"MNX").attr("id",i+"a");
             $("#"+i+"b").text(Object.amount).attr("id",i+"b");
             if (Object.maker_side=="buy") {
-              $("#"+i+"c").text("compra").attr("id",i+"c");
+              $("#"+i+"c").text("compra").attr("id",i+"c").css('background-color', '#2a9f2a80');;
             }
             else {
-              $("#"+i+"c").text("Venta").attr("id",i+"c");
+              $("#"+i+"c").text("Venta").attr("id",i+"c").css('background-color', '#db151580');;
             }
           });
 
