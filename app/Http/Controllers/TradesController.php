@@ -53,7 +53,7 @@ class TradesController extends Controller
     {
       $today = date('Y-m-d');
       $yesterday= date("d-m-Y",strtotime($today."- 1 days"));
-      $Trades =\DB::table('trades')->WhereDate('created_at',$yesterday)->where('maker_side','buy')->OrderBy('created_at','ASC')->take('10')->get();
+      $Trades =\DB::table('trades')->WhereDay('created_at',$yesterday)->where('maker_side','buy')->OrderBy('created_at','ASC')->take('10')->get();
       return response()->json($Trades);
     }
     public function index_mes_compras()
@@ -80,7 +80,7 @@ class TradesController extends Controller
     {
       $today = date('Y-m-d');
       $yesterday= date("d-m-Y",strtotime($today."- 1 days"));
-      $Trades =\DB::table('trades')->WhereDate('created_at',$yesterday)->where('maker_side','sell')->OrderBy('created_at','ASC')->take('10')->get();
+      $Trades =\DB::table('trades')->WhereDay('created_at',$yesterday)->where('maker_side','sell')->OrderBy('created_at','ASC')->take('10')->get();
       return response()->json($Trades);
     }
 
